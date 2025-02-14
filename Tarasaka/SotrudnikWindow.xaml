@@ -1,0 +1,284 @@
+﻿<Window x:Class="Tarasaka.SotrudnikWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tarasaka"
+        mc:Ignorable="d"
+        Title="SotrudnikWindow" MinHeight="835" MinWidth="1036" Height="835" Width="1036" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <WindowChrome.WindowChrome>
+        <WindowChrome/>
+    </WindowChrome.WindowChrome>
+    <Grid Margin="0,0,0,-16">
+        <Grid Margin="168,84,0,0">
+            <Border BorderThickness="1" Margin="26,92,368,39" Background="#FFFFD3D3" Width="474" Height="620">
+                <DataGrid x:Name="dataMain_Otchety" AutoGenerateColumns="False" AlternatingRowBackground="#FFE6DFDF" HeadersVisibility="None" FontSize="18" FontFamily="Candara"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="22,22,22,20" BorderBrush="{x:Null}" Background="{x:Null}" SelectionChanged="dataMain_Otchety_SelectionChanged" GridLinesVisibility="None" RowBackground="White" RenderTransformOrigin="1,1">
+                    <DataGrid.Style>
+                        <Style TargetType="{x:Type DataGrid}">
+                            <Setter Property="Background" Value="#ffffff"/>
+                            <Setter Property="Foreground" Value="#333333"/>
+                            <Setter Property="RowBackground" Value="#ffffff"/>
+                            <Setter Property="AlternatingRowBackground" Value="#f9f9f9"/>
+                            <Setter Property="GridLinesVisibility" Value="None"/>
+                            <Setter Property="RowHeight" Value="50"/>
+                            <Setter Property="FontSize" Value="18"/>
+                            <Setter Property="Margin" Value="18"/>
+                        </Style>
+                    </DataGrid.Style>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  Binding="{Binding Name_Otchet}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            <Border BorderThickness="1" Margin="568,92,57,607" Background="#FFFFC4C4" Height="52" Width="243">
+                <TextBlock x:Name="TextBlock_ID" TextWrapping="Wrap" Text="TextBlock" Foreground="#FF333333" FontFamily="Candara" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            <Border BorderThickness="1" Margin="568,202,57,497" Background="#FFFFC4C4" Width="243" Height="52">
+                <TextBlock x:Name="TextBlock_Familia" TextWrapping="Wrap" Text="TextBlock" Foreground="#FF333333" FontSize="16" FontFamily="Candara" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border BorderThickness="1" Margin="568,318,57,381" Background="#FFFFC4C4" Width="243" Height="52">
+                <TextBlock x:Name="TextBlock_Name" TextWrapping="Wrap" Text="TextBlock" Foreground="#FF333333" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontFamily="Candara"/>
+            </Border>
+            <TextBlock TextWrapping="Wrap" Text="Ранее созданные отчеты" Foreground="#FF5A5A5A" FontSize="24" FontFamily="Gill Sans Ultra Bold Condensed" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,350,650"/>
+            <TextBlock HorizontalAlignment="Center" Margin="500,0,0,650" TextWrapping="Wrap" Text="Данные о сотруднике" Foreground="#FF5A5A5A" FontSize="24" FontFamily="Gill Sans Ultra Bold Condensed" VerticalAlignment="Center"/>
+            <Border BorderThickness="1" Margin="568,433,57,266" Background="#FFFFC4C4" Width="243" Height="52">
+                <TextBlock x:Name="TextBlock_IDLevel" TextWrapping="Wrap" Text="TextBlock" Foreground="#FF333333" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontFamily="Candara"/>
+            </Border>
+        </Grid>
+        <Grid Margin="0,0,0,-16">
+            <Rectangle HorizontalAlignment="Left" Width="163" Margin="0,0,0,30">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF924141" Offset="1"/>
+                        <GradientStop Color="#FF5E25FF" Offset="0"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Ellipse HorizontalAlignment="Left" Height="52" Margin="53,230,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.545,1.455" Fill="#FF4F16D0"/>
+            <Ellipse HorizontalAlignment="Left" Height="52" Margin="54,359,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.545,1.455" Fill="#FF4F16D0"/>
+            <TextBlock HorizontalAlignment="Left" Margin="55,295,0,0" TextWrapping="Wrap" Text="Задания" VerticalAlignment="Top" Foreground="#FFFFFEFE" FontSize="16" FontFamily="Candara"/>
+            <TextBlock HorizontalAlignment="Left" Margin="56,425,0,0" TextWrapping="Wrap" Text="Отчеты" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+            <Image HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="136" Source="/logo.png" Margin="16,0,0,0" RenderTransformOrigin="0.567,0.497"/>
+            <Button x:Name="btnmenu_Zadanya" Content="" HorizontalAlignment="Left" Margin="67,241,0,0" VerticalAlignment="Top" Height="30" Width="30" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="1.069,0.655" Opacity="0.8" Cursor="Hand" Click="btnmenu_Zadanya_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/icons8-maintenance-50.png" Stretch="Fill" TileMode="None"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0F3ED0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="btnmenu_Otchety" Content="" HorizontalAlignment="Left" Margin="65,367,0,0" VerticalAlignment="Top" Height="36" Width="36" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="1.069,0.655" Opacity="0.8" Cursor="Hand" Click="btnmenu_Otchety_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/icOT.png" Stretch="Fill" TileMode="None"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0F3ED0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Ellipse HorizontalAlignment="Left" Height="52" Margin="54,711,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.545,1.455" Fill="#FF4F16D0"/>
+            <TextBlock HorizontalAlignment="Left" Margin="16,768,0,0" TextWrapping="Wrap" Text="Выход из учетной записи" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="133" Height="47" TextAlignment="Center"/>
+            <Button x:Name="btnmenu_exit" Content="" HorizontalAlignment="Left" Margin="71,721,0,0" VerticalAlignment="Top" Height="30" Width="30" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="1.069,0.655" Opacity="0.8" Cursor="Hand" Click="btnmenu_exit_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/icons8-выйти-50.png" Stretch="Fill" TileMode="None"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0F3ED0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+        <Grid x:Name="Grid_Othoty" Margin="200,49,28,44" Visibility="Hidden">
+            <Ellipse HorizontalAlignment="Left" Height="238" Margin="-108,481,0,0" VerticalAlignment="Top" Width="252" Fill="#FF31219E"/>
+            <Image HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" Source="/icons8-отчет-о-здоровье-64.png" Stretch="UniformToFill" Margin="-78,575,0,0"/>
+            <Border BorderThickness="1" CornerRadius="10" Background="#FFECECEC" Margin="1,4,1,5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="40" Color="#FFB91A1A"/>
+                </Border.Effect>
+            </Border>
+            <Grid Margin="48,65,30,173">
+                <Label Content="Название отчета:" HorizontalAlignment="Left" Margin="17,19,0,450" VerticalAlignment="Top" Foreground="#FF020000" FontFamily="Candara" FontSize="14"/>
+                <TextBox x:Name="ReportTitle" HorizontalAlignment="Left" Margin="17,60,0,420" VerticalAlignment="Top" Width="384" FontSize="14" FontFamily="Times New Roman"/>
+                <Label Content="Содержание отчета:" HorizontalAlignment="Left" Margin="17,85,0,0" VerticalAlignment="Top" FontFamily="Candara" FontSize="14"/>
+                <TextBox x:Name="ReportContent" Margin="10,120,0,155" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" FontSize="14" FontFamily="Times New Roman"/>
+                <Button Content="Печать отчета" HorizontalAlignment="Left" Margin="151,400,0,20" VerticalAlignment="Bottom" Click="PrintReport_Click" Height="33" Width="107" Background="#FF4F16D0" BorderBrush="{x:Null}" Foreground="White"/>
+                <Button Content="Сохранить отчет" HorizontalAlignment="Left" Margin="17,0,0,20" VerticalAlignment="Bottom" Click="SaveReport_Click" Height="33" Width="105" Foreground="White" Background="#FF4F16D0">
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF6613E4"/>
+                            <GradientStop Color="#FF960045" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Grid_Zadanya" Margin="168,10,0,0" Visibility="Hidden">
+            <Ellipse HorizontalAlignment="Left" Height="240" Margin="-76,522,0,0" VerticalAlignment="Top" Width="254" Fill="#FF31219E"/>
+            <Image Source="/icons8-maintenance.png" Margin="-47,617,865,158" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="50">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="/icons8-maintenance.png"/>
+                </Image.OpacityMask>
+            </Image>
+            <Border BorderThickness="1" CornerRadius="10" Background="#FFECECEC" Margin="33,48,31,52">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="40" Color="#FFB91A1A"/>
+                </Border.Effect>
+                <TextBlock x:Name="kk" TextWrapping="Wrap" Text="TextBlock" Margin="724,711,36,27" Visibility="Hidden"/>
+            </Border>
+            <DataGrid
+                AutoGenerateColumns="False"
+                GridLinesVisibility="None" 
+                HeadersVisibility="Column"
+                BorderBrush="Gray" 
+                RowHeight="40" 
+                Background="#f0f0f0"
+                AlternatingRowBackground="#d9e4f5" 
+                CanUserAddRows="False"
+                x:Name="dataGrid_Job" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="89,140,69,0" Foreground="Black" SelectionChanged="dataGrid_SelectionChanged_1" Height="502" VerticalAlignment="Top">
+                <DataGrid.Style>
+                    <Style TargetType="{x:Type DataGrid}">
+                        <Setter Property="Background" Value="#ffffff"/>
+                        <Setter Property="Foreground" Value="#333333"/>
+                        <Setter Property="RowBackground" Value="#ffffff"/>
+                        <Setter Property="AlternatingRowBackground" Value="#f9f9f9"/>
+                        <Setter Property="GridLinesVisibility" Value="None"/>
+                        <Setter Property="RowHeight" Value="30"/>
+                        <Setter Property="FontSize" Value="14"/>
+                    </Style>
+                </DataGrid.Style>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding IDJob}" Width="*"/>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding DescriptionJob}" Width="*"/>
+                    <DataGridTextColumn Header="Зарплата" Binding="{Binding PriceJob}" Width="*"/>
+                    <DataGridTextColumn Header="Начало работы" Binding="{Binding TimeJobStart}" Width="*"/>
+                    <DataGridTextColumn Header="Конец работы" Binding="{Binding TimeJobEnd}" Width="*"/>
+                    <DataGridTextColumn Header="Уровень сложности работы" Binding="{Binding IDLevelJob}" Width="*"/>
+                    <DataGridTextColumn Header="ID Сотрудника" Binding="{Binding IDSotrudnicy}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="takeJob" Content="Взять задание" HorizontalAlignment="Left" Margin="316,0,0,90" VerticalAlignment="Bottom" Height="30" Width="126" Click="takeJob_Click" Background="#FF4F16D0" BorderBrush="{x:Null}" Foreground="White"/>
+            <TextBox  x:Name="textB5" HorizontalAlignment="Left" Margin="289,0,0,144" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="180"/>
+            <TextBlock TextWrapping="Wrap" Text="Взять задание под номером:" Margin="89,0,584,146" VerticalAlignment="Bottom" FontSize="14"/>
+        </Grid>
+        <Grid Margin="0,-2,0,0" Height="46" VerticalAlignment="Top" MouseDown="Grid_MouseDown">
+            <Button x:Name="Crest" Content="" Margin="0,20,18,0" VerticalAlignment="Top" Height="26" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1" Cursor="Hand" HorizontalAlignment="Right" Width="29">
+                <Button.Background>
+                    <ImageBrush ImageSource="/4115230-cancel-close-cross-delete_114048.png"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0F3ED0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="winup" Content="Button" Margin="0,23,62,0" VerticalAlignment="Top" Cursor="Hand" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="22" Click="Button_Click_2" HorizontalAlignment="Right" Width="22">
+                <Button.Background>
+                    <ImageBrush ImageSource="/free-icon-expand-window-7792219.png"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0F3ED0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="minwin" Content="Button" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="22" Click="minwin_Click" Cursor="Hand" Margin="0,23,105,0" Width="22" HorizontalAlignment="Right">
+                <Button.Background>
+                    <ImageBrush ImageSource="/free-icon-minimize-sign-6057365.png"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0F3ED0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
